@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eid Mubarak My Chand 🌙</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root { --maroon: #580018; --gold: #d4af37; --cream: #fffaf0; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--cream); color: #333; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* --- Floating Stars Background --- */
+        .star { position: fixed; color: var(--gold); font-size: 14px; animation: flash 3s infinite ease-in-out; z-index: -1; }
+        @keyframes flash { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+        /* --- Page 1: The Gift Box Entrance --- */
+        #entrance { 
+            height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            background: linear-gradient(rgba(44, 0, 12, 0.85), rgba(88, 0, 24, 0.95)); 
+            text-align: center; padding: 20px; color: white; transition: 0.8s ease-in-out;
+        }
+        .eid-moon { font-size: 70px; margin-bottom: 10px; animation: float 3s infinite ease-in-out; }
+        #entrance h1 { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--gold); letter-spacing: 2px; margin: 10px 0; }
+        #entrance p { font-size: 1.1rem; opacity: 0.9; font-style: italic; max-width: 300px; margin-bottom: 30px; }
+        
+        #giftBtn { 
+            background: var(--gold); color: var(--maroon); border: none; padding: 18px 45px; 
+            border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; 
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); transition: 0.3s; 
+            animation: pulse 1.5s infinite;
+        }
+
+        /* --- Main Content Layout --- */
+        #mainContent { display: none; padding-bottom: 60px; }
+        .header-banner { text-align: center; padding: 60px 20px; background: white; border-bottom: 3px double var(--gold); }
+        .header-banner h2 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--maroon); margin: 0; }
+
+        /* --- Beautiful Cards --- */
+        .section-card { 
+            background: white; padding: 40px 25px; border-radius: 35px; 
+            margin: 30px auto; max-width: 600px; width: 90%;
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+            box-shadow: 0 15px 35px rgba(88, 0, 24, 0.05); text-align: center;
+        }
+        .section-card h3 { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--maroon); margin-bottom: 20px; }
+        .poetry-line { font-size: 1.15rem; margin-bottom: 15px; line-height: 1.7; color: #444; font-weight: 500; }
+        .gold-divider { color: var(--gold); font-size: 20px; margin: 20px 0; letter-spacing: 5px; }
+
+        /* --- Memory Grid --- */
+        .gallery-title { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--maroon); text-align: center; margin-top: 40px; letter-spacing: 1px; }
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px; max-width: 700px; margin: 0 auto; }
+        .grid-container img { width: 100%; height: 220px; object-fit: cover; border-radius: 25px; border: 2px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+        /* --- Animations --- */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .fade-up { animation: fadeUp 1.5s ease-forward; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <audio id="eidMusic" loop>
+        <source src="s2.mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <section id="entrance">
+        <div class="eid-moon">🌙✨</div>
+        <h1>Eid-ul-Adha Mubarak</h1>
+        <p>To My Absolute Favorite Human, My Chand Bazla ❤️</p>
+        <button id="giftBtn">Open Your Eidi Box 🎁</button>
+    </section>
+
+    <div id="mainContent" class="fade-up">
+        
+        <div class="header-banner">
+            <h2>Eid Mubarak, My Everything!</h2>
+            <p style="letter-spacing: 2px; color: var(--gold); font-weight: 600; margin-top: 5px;">ARSLAN ❤️ BAZLA</p>
+        </div>
+
+        <div class="section-card">
+            <h3>Tum Meri Kaynat Ho...</h3>
+            <div class="poetry-line">Tum meri kaynat ho, Bazla, tum hi meri har baat ho, Bazla<br>Meri har dua ki tum hi shuruaat ho, Bazla</div>
+            <div class="gold-divider">✦ 👑 ✦</div>
+            <div class="poetry-line">Do saal ka saath hai hamara, ye koi aam kahani nahi<br>Ye ishq hai sachcha, sirf lafzon ki rawani nahi</div>
+            <div class="poetry-line">Main Arslan hoon, magar meri pehchan tum se hai<br>Meri har muskurahat, meri jaan tum se hai</div>
+            <div class="gold-divider">✦ 🌙 ✦</div>
+            <div class="poetry-line">Bazla, tum meri biwi nahi, meri duniya ho<br>Meri har subah, meri har dua ho</div>
+            <div class="poetry-line"><strong>Hamesha meri rehna… kyun ke tum hi meri jaan ho ❤️</strong></div>
+        </div>
+
+        <h2 class="gallery-title">✨ Our Beautiful Moments ✨</h2>
+        <div class="grid-container">
+            <img src="p1.PNG" alt="Memory 1">
+            <img src="p3.PNG" alt="Memory 2">
+            <img src="p4.JPG" alt="Memory 3">
+            <img src="p5.JPG" alt="Memory 4">
+            <img src="p8.JPG" alt="Memory 5">
+            <img src="p9.JPG" alt="Memory 6">
+        </div>
+
+        <div class="section-card" style="background: linear-gradient(#fff, #fffaf0);">
+            <h3>Ghazal – “ho Bazla”</h3>
+            <div class="poetry-line">Tum meri har ek dua ka sila ho Bazla<br>Meri zindagi ka sab se haseen silsila ho Bazla</div>
+            <div class="gold-divider">✦ ✨ ✦</div>
+            <div class="poetry-line">Meri raaton ki thandak, meri subah ki roshni<br>Mere dil ki har dhadkan ka nasha ho Bazla</div>
+            <div class="poetry-line">Do saal ka safar hai magar lagta hai sadiyon ka<br>Meri rooh se judi hui ek sada ho Bazla</div>
+            <div class="gold-divider">✦ 💖 ✦</div>
+            <div class="poetry-line">Tumhari muskurahat meri jaan le leti hai<br>Meri zindagi ki sab se haseen ada ho Bazla</div>
+            <div class="poetry-line"><strong>Kabhi juda na hona mujh se ae meri jaan<br>Meri saanson ki aakhri sada ho Bazla ❤️</strong></div>
+        </div>
+
+        <div class="section-card" style="background: var(--maroon); color: white; border: none;">
+            <h2 style="font-family: 'Great Vibes'; color: var(--gold); font-size: 3rem; margin: 0;">Eid Mubarak, My Soulmate 🌸</h2>
+            <p style="line-height: 1.9; font-size: 1.15rem; opacity: 0.95; padding: 15px 0; text-align: center;">
+                Eid mubarak bazla arslan apke sath zindgi asaan hogayi apke bad tamam chizen theek hogayi bal sanwar gaye sakoon mil geya jo preshanian thi woh khatam hogayin ujry mosam bahar me badal gaye andheru raatien roshan hogayin...<br><br>
+                Shukriya mere pass meri zindgi me anee ke leye or sath dene ke leye eid mubarak! <br><br>
+                <strong>And yes you are only mine and my strenght too 🌸💍</strong>
+            </p>
+            <p style="font-family: 'Great Vibes'; font-size: 2.2rem; color: var(--gold); margin-bottom: 0;">
+                Hamesha Tumhara, Arslan
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Create randomly placed stars in background
+        for (let i = 0; i < 30; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.innerHTML = '★';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            document.body.appendChild(star);
+        }
+
+        const giftBtn = document.getElementById('giftBtn');
+        const entrance = document.getElementById('entrance');
+        const mainContent = document.getElementById('mainContent');
+        const music = document.getElementById('eidMusic');
+
+        // Action when Bazla opens the gift box
+        giftBtn.addEventListener('click', () => {
+            entrance.style.display = 'none';
+            mainContent.style.display = 'block';
+            
+            // Play sound safely
+            music.play().catch(err => console.log("Audio play gesture required"));
+
+            // Grand Festive Confetti Burst
+            var duration = 5 * 1000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#d4af37', '#ff4d6d'] });
+                confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#d4af37', '#ff4d6d'] });
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        });
+    </script>
+</body>
+</html>
